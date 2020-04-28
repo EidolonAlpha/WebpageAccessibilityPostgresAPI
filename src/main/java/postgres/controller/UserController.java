@@ -22,9 +22,15 @@ public class UserController {
 		this.userService = userService;
 	}
 	
+//	@RequestMapping("/CreateUser")
+//	public ResponseEntity<User> createUserFromId() {
+//		User user = userService.create();
+//		return new ResponseEntity<>(user, HttpStatus.CREATED);
+//	}
+	
 	@RequestMapping("/CreateUser")
-	public ResponseEntity<User> createUserFromId() {
-		User user = userService.create();
+	public ResponseEntity<User> createUserFromId(@RequestParam long id) {
+		User user = userService.create(id);
 		return new ResponseEntity<>(user, HttpStatus.CREATED);
 	}
 

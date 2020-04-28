@@ -25,6 +25,10 @@ public class UserService {
 	public Optional<User> getByID(Long id) {
 		return userRepo.findById(id);
 	}
+
+	public User create(long id) {
+		return userRepo.save(new User(id));
+	}
 	
 	
 }
