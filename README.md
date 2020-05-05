@@ -19,14 +19,44 @@ The creation scripts are available in this repo
 An installer has been created to aid install.
 
 
-## Contributing to Webpage Design Manipulator
-To contribute to Webpage Design Manipulator, follow these steps:
+## Server Details
+Port Number: 5000
 
-1. Fork this repository.
-2. Create a branch: `git checkout -b <branch_name>`.
-3. Make your changes and commit them: `git commit -m '<commit_message>'`
-4. Push to the original branch: `git push origin Webpage Design Manipulator/<location>`
-5. Create the pull request.
+## Create User EndPoint
+URL: /CreateUser
+
+Parameters: id <long>
+
+Example: http://localhost:5000/CreateUser?id=1
+
+Output: This will return the user id created
+
+## Get User Endpoint
+URL: /GetUser
+
+Parameters: id <long>
+
+Example: http://localhost:5000/GetUser?id=1
+    
+Output: This will return the user id created
+
+## Get User Preference Endpoint
+URL: /GetSessionRuleSets
+
+Parameters: None
+
+Body Example: {"userId":1, "url": "file:///D:/jonny/Documents/University/FinalYearProject/TestWebsite/TestWebsite.html", "ruleSetIdArray":34}
+    
+Output: This will return the stored user preferences for the specified Webpage and user
+
+## Delete User Preference Injection Rules Endpoint
+URL: /DeleteInjectionCssRules
+
+Parameters: None
+
+Body Example: {"userId":1, "url": "file:///D:/jonny/Documents/University/FinalYearProject/TestWebsite/TestWebsite.html", "ruleSetIdArray":34}
+    
+Output: This will delete the stored user preferences for the specified Webpage and user should it exist
 
 ## Contact
 Email: jhughes61@qub.ac.uk
